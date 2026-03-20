@@ -1,4 +1,5 @@
 # these files are too big to store on github uncompressed, we store the .zips and uncompress them when cloned to our local machines
+data\original
 
 all_musk_posts.csv
 
