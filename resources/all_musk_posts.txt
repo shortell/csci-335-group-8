@@ -1,0 +1,43 @@
+Content of the dataset all_musk_posts.csv:
+
+id - ID of the tweet by elonmusk
+
+url - link to a tweet (on x.com)
+
+twitterUrl - link to a tweet (on twitter.com)
+
+fullText - text of the tweet
+
+retweetCount - number of retweets
+
+replyCount - number of replies
+
+likeCount - number of likes
+
+quoteCount - number of quotes
+
+viewCount - number of views
+
+createdAt - timestamp, UTC
+
+bookmarkCount - number of bookmarks
+
+isReply - boolean, True if the post is a reply
+
+inReplyToId - ID of the original tweet if that's a reply
+
+conversationId - conversation ID
+
+inReplyToUserId - ID of the user that received a reply
+
+inReplyToUsername - current username of the user that received a reply
+
+isPinned - boolean, True if the post was pinned
+
+isRetweet - boolean, True if the post is a retweet
+
+isQuote - boolean, True if the post is a quote
+
+isConversationControlled - conversation marked as "controlled", only selected users can reply
+
+possiblySensitive - conversation marked as "sensitive"

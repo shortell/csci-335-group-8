@@ -1,0 +1,43 @@
+Content of the dataset musk_quote_tweets.csv:
+
+orig_tweet_id - ID of the original tweet by that @elonmusk quote-tweeted
+
+orig_tweet_created_at - timestamp of the original tweet, UTC
+
+orig_tweet_text - text of the original tweet, UTC
+
+orig_tweet_url - link to the original tweet (on x.com)
+
+orig_tweet_twitter_url - link to the original tweet (on twitter.com)
+
+orig_tweet_username - current (March 2025) username of the account that posted the original tweet
+
+orig_tweet_retweet_count - number of retweets for the original tweet
+
+orig_tweet_reply_count - number of replies for the original tweet
+
+orig_tweet_like_count - number of likes for the original tweet
+
+orig_tweet_quote_count - number of quotes for the original tweet
+
+orig_tweet_view_count - number of views for the original tweet
+
+orig_tweet_bookmark_count - number of bookmarks for the original tweet
+
+musk_tweet_id - ID of the quote-tweet by elonmusk
+
+musk_quote_tweet - text of the quote-tweet by elonmusk
+
+musk_quote_retweet_count - number of retweets for the quote-tweet by elonmusk
+
+musk_quote_reply_count - number of replies for the quote-tweet by elonmusk
+
+musk_quote_like_count- number of likes for the quote-tweet by elonmusk
+
+musk_quote_quote_count- number of quotes for the quote-tweet by elonmusk
+
+musk_quote_view_count - number of views for the quote-tweet by elonmusk
+
+musk_quote_bookmark_count - number of bookmarks for the quote-tweet by elonmusk
+
+musk_quote_created_at - timestamp of the quote-tweet by elonmusk, UTC

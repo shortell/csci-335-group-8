@@ -1,0 +1,20 @@
+Content of the dataset TSLA_1min_market_hours_2016_2025.csv:
+
+timestamp - timestamp of the 1-minute interval (market hours)
+
+symbol - stock ticker symbol (TSLA)
+
+open - opening price at the start of the minute
+
+high - highest price during the minute
+
+low - lowest price during the minute
+
+close - closing price at the end of the minute
+
+volume - total number of shares traded during the minute
+
+trade_count - number of trades executed during the minute
+
+vwap - The average price of the stock during the minute, 
+weighted by trading volume. Prices with more shares traded have a bigger impact on this value.
