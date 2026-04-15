@@ -4,65 +4,57 @@ import numpy as np
 import pandas as pd
 from pathlib import Path
 from openai import OpenAI
-from google import genai
-from google.genai import types as genai_types
 
-BASE_DIR   = Path(__file__).parent.parent
-INPUT_PATH = BASE_DIR / 'data' / 'cleaned' / 'pipeline_output.csv'
-BASE_OUTPUT_PATH = BASE_DIR / 'data' / 'vector_embeddings'  # provider subfolder added dynamically
+"""
+IF INVESTIGATING THIS FILE READ THIS FIRST
 
-openAI_client = OpenAI(http_client=httpx.Client())
-google_client = genai.Client()
+The vectors have already been created and are stored in the data/vector_embeddings/open_ai directory.
+This script is here for reference and can be used to create new vectors if needed.
+But since the vectors are already created, this script should have to be run again.
+Because it costs money to create vectors. A very small amount less than a dollar but repeated runs will add up.
 
-openAI_embedding_model = 'text-embedding-3-small'
-google_embedding_model = 'models/text-embedding-004'
+If you do want to run this script, make sure you have a valid OPENAI_API_KEY in your .env file.
 
+"""
 
-def embed_batch_openai(client, model, batch):
-    response = client.embeddings.create(input=batch, model=model)
-    return [item.embedding for item in response.data]
-
-
-def embed_batch_google(client, model, batch):
-    response = client.models.embed_content(
-        model=model,
-        contents=batch,
-        config=genai_types.EmbedContentConfig(task_type='SEMANTIC_SIMILARITY')
-    )
-    return [e.values for e in response.embeddings]
+# Paths are relative to the project root, resolved from this file's location
+BASE_DIR    = Path(__file__).parent.parent
+INPUT_PATH  = BASE_DIR / 'data' / 'cleaned' / 'pipeline_output.csv'
+OUTPUT_PATH = BASE_DIR / 'data' / 'vector_embeddings' / 'open_ai'
 
 
-EMBED_FN = {
-    openAI_embedding_model: (embed_batch_openai, 'open_ai'),
-    google_embedding_model:  (embed_batch_google, 'google'),
-}
+def embed_tweets(model: str = 'text-embedding-3-small'):
+    """
+    Embeds the cleanText column from INPUT_PATH using the given OpenAI model
+    and saves a compressed .npz archive to OUTPUT_PATH/<model>.npz.
 
+    Arrays are index-aligned: embeddings[i] belongs to row_ids[i] / tweet_ids[i].
 
-def embed_tweets(client, embedding_model):
-    if embedding_model not in EMBED_FN:
-        raise ValueError(f"Unknown embedding model '{embedding_model}'. "
-                         f"Register it in EMBED_FN first.")
-
-    embed_batch, provider_folder = EMBED_FN[embedding_model]  # unpack both values
-    output_path = BASE_OUTPUT_PATH / provider_folder           # e.g. vector_embeddings/google
+    Load example:
+        data       = np.load('text-embedding-3-small.npz', allow_pickle=False)
+        embeddings = data['embeddings']   # (N, D) float32
+        row_ids    = data['row_ids']      # join key back to pipeline_output.csv
+    """
+    # http_client kwarg works around openai/httpx version incompatibility
+    client = OpenAI(http_client=httpx.Client())
 
     df    = pd.read_csv(INPUT_PATH)
     texts = df['cleanText'].fillna('').tolist()
-    print(f"Embedding {len(texts)} tweets with model '{embedding_model}' ...")
+    print(f"Embedding {len(texts)} tweets with model '{model}' ...")
 
     BATCH_SIZE     = 256
     all_embeddings = []
 
     for start in range(0, len(texts), BATCH_SIZE):
-        batch = texts[start : start + BATCH_SIZE]
-        vecs  = embed_batch(client, embedding_model, batch)
-        all_embeddings.extend(vecs)
+        batch    = texts[start: start + BATCH_SIZE]
+        response = client.embeddings.create(input=batch, model=model)
+        all_embeddings.extend([item.embedding for item in response.data])
         print(f"  {min(start + BATCH_SIZE, len(texts))} / {len(texts)}")
 
     embeddings_array = np.array(all_embeddings, dtype=np.float32)
 
-    output_path.mkdir(parents=True, exist_ok=True)
-    out_file = output_path / f'{embedding_model}.npz'
+    OUTPUT_PATH.mkdir(parents=True, exist_ok=True)
+    out_file = OUTPUT_PATH / f'{model}.npz'
     np.savez_compressed(
         out_file,
         embeddings=embeddings_array,
@@ -76,5 +68,4 @@ def embed_tweets(client, embedding_model):
 
 
 if __name__ == '__main__':
-    # embed_tweets(openAI_client, openAI_embedding_model)
-    embed_tweets(google_client, google_embedding_model)
+    embed_tweets()
