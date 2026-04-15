@@ -16,12 +16,10 @@ Trains a Support Vector Machine classifier to predict TSLA price movement
 direction from Elon Musk tweet embeddings.
 
 Inputs
-------
   data/vector_embeddings/<provider>/<model>.npz  — tweet embeddings
   data/cleaned/pipeline_output.csv               — tweet metadata + aligned stock prices
 
 Output
-------
   Prints classification report and confusion matrix.
   Saves plots to analysis/svm_results.png
 """
@@ -29,7 +27,6 @@ Output
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 ACTIVE_MODEL = ('open_ai', 'text-embedding-3-small')
-# ACTIVE_MODEL = ('google', 'models/text-embedding-004')
 
 BASE_DIR       = Path(__file__).parent.parent
 EMBEDDING_PATH = BASE_DIR / 'data' / 'vector_embeddings' / ACTIVE_MODEL[0] / f'{ACTIVE_MODEL[1]}.npz'

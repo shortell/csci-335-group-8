@@ -16,12 +16,10 @@ Trains a Logistic Regression classifier to predict TSLA price movement
 direction from Elon Musk tweet embeddings.
 
 Inputs
-------
   data/vector_embeddings/<provider>/<model>.npz  — tweet embeddings
   data/cleaned/pipeline_output.csv               — tweet metadata + aligned stock prices
 
 Output
-------
   Prints classification report and confusion matrix.
   Saves plots to analysis/logistic_regression_results.png
 """
@@ -29,7 +27,6 @@ Output
 # ── CONFIG ────────────────────────────────────────────────────────────────────
 
 ACTIVE_MODEL = ('open_ai', 'text-embedding-3-small')
-# ACTIVE_MODEL = ('google', 'models/text-embedding-004')
 
 BASE_DIR       = Path(__file__).parent.parent
 EMBEDDING_PATH = BASE_DIR / 'data' / 'vector_embeddings' / ACTIVE_MODEL[0] / f'{ACTIVE_MODEL[1]}.npz'
@@ -37,7 +34,7 @@ PIPELINE_PATH  = BASE_DIR / 'data' / 'cleaned' / 'pipeline_output.csv'
 PLOT_OUT       = BASE_DIR / 'analysis' / 'logistic_regression_results.png'
 
 BASELINE_COL   = 'stock_t0_close'
-LOOKAHEAD_COL  = 'stock_t16_close'
+LOOKAHEAD_COL  = 'stock_t16_close' # can change to t1, t4, t8, t16, t32 for different lookahead windows
 PCA_COMPONENTS = 100
 
 
