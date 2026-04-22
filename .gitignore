@@ -11,6 +11,8 @@ musk_quote_tweets.csv
 
 TSLA_1min_market_hours_2016_2025.csv
 
+TSLA_1min_market_hours_UTC.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

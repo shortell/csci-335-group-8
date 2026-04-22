@@ -1,0 +1,76 @@
+Logistic Regression Models Report (Tuning)
+=========================================
+
+Model 1:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 0.1, 'class_weight': None, 'solver': 'lbfgs'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 2:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 0.1, 'class_weight': None, 'solver': 'saga'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 3:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 0.1, 'class_weight': None, 'solver': 'newton-cg'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 7:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 1.0, 'class_weight': None, 'solver': 'lbfgs'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 8:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 1.0, 'class_weight': None, 'solver': 'saga'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 9:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 1.0, 'class_weight': None, 'solver': 'newton-cg'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 13:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 10.0, 'class_weight': None, 'solver': 'lbfgs'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 14:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 10.0, 'class_weight': None, 'solver': 'saga'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 15:
+Thresholds: down < -0.2, up > 0.2
+Params: {'C': 10.0, 'class_weight': None, 'solver': 'newton-cg'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+Thresholds: (-0.2, 0.2)
+Params: {'C': 0.1, 'class_weight': None, 'solver': 'lbfgs'}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.65      0.74      0.69       271
+        flat       0.00      0.00      0.00        44
+          up       0.67      0.69      0.68       276
+
+    accuracy                           0.66       591
+   macro avg       0.44      0.48      0.46       591
+weighted avg       0.61      0.66      0.64       591
+

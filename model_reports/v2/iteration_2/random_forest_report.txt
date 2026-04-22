@@ -1,0 +1,82 @@
+Random Forest Models Report (Tuning)
+====================================
+
+Model 1:
+Thresholds: down < -0.4, up > 0.4
+Params: {'n_estimators': 200, 'min_samples_split': 5, 'max_depth': None, 'class_weight': 'balanced_subsample'}
+Accuracy: 0.6024
+Weighted F1-Score: 0.5593
+
+Model 2:
+Thresholds: down < -0.25, up > 0.25
+Params: {'n_estimators': 100, 'min_samples_split': 2, 'max_depth': 10, 'class_weight': None}
+Accuracy: 0.6413
+Weighted F1-Score: 0.6103
+
+Model 3:
+Thresholds: down < -0.3, up > 0.3
+Params: {'n_estimators': 100, 'min_samples_split': 5, 'max_depth': None, 'class_weight': None}
+Accuracy: 0.6227
+Weighted F1-Score: 0.5853
+
+Model 4:
+Thresholds: down < -0.4, up > 0.4
+Params: {'n_estimators': 200, 'min_samples_split': 2, 'max_depth': 10, 'class_weight': 'balanced_subsample'}
+Accuracy: 0.5770
+Weighted F1-Score: 0.5484
+
+Model 5:
+Thresholds: down < -0.2, up > 0.2
+Params: {'n_estimators': 200, 'min_samples_split': 10, 'max_depth': 20, 'class_weight': 'balanced'}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6412
+
+Model 6:
+Thresholds: down < -0.3, up > 0.3
+Params: {'n_estimators': 100, 'min_samples_split': 5, 'max_depth': 30, 'class_weight': 'balanced'}
+Accuracy: 0.6294
+Weighted F1-Score: 0.5949
+
+Model 7:
+Thresholds: down < -0.5, up > 0.5
+Params: {'n_estimators': 50, 'min_samples_split': 5, 'max_depth': 30, 'class_weight': None}
+Accuracy: 0.5618
+Weighted F1-Score: 0.5164
+
+Model 8:
+Thresholds: down < -0.1, up > 0.1
+Params: {'n_estimators': 50, 'min_samples_split': 2, 'max_depth': 10, 'class_weight': 'balanced'}
+Accuracy: 0.6717
+Weighted F1-Score: 0.6613
+
+Model 9:
+Thresholds: down < -0.1, up > 0.1
+Params: {'n_estimators': 200, 'min_samples_split': 5, 'max_depth': 20, 'class_weight': 'balanced_subsample'}
+Accuracy: 0.6684
+Weighted F1-Score: 0.6545
+
+Model 10:
+Thresholds: down < -0.3, up > 0.3
+Params: {'n_estimators': 200, 'min_samples_split': 2, 'max_depth': 10, 'class_weight': None}
+Accuracy: 0.6294
+Weighted F1-Score: 0.5916
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6717
+Weighted F1-Score: 0.6613
+Thresholds: (-0.1, 0.1)
+Params: {'n_estimators': 50, 'min_samples_split': 2, 'max_depth': 10, 'class_weight': 'balanced'}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.66      0.71      0.69       282
+        flat       0.25      0.04      0.07        24
+          up       0.69      0.68      0.69       285
+
+    accuracy                           0.67       591
+   macro avg       0.53      0.48      0.48       591
+weighted avg       0.66      0.67      0.66       591
+

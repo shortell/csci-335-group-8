@@ -1,0 +1,82 @@
+Logistic Regression Models Report (Tuning)
+=========================================
+
+Model 1:
+Thresholds: down < -0.1, up > 0.1
+Params: {'solver': 'lbfgs', 'class_weight': 'balanced', 'C': 100.0}
+Accuracy: 0.5753
+Weighted F1-Score: 0.6048
+
+Model 2:
+Thresholds: down < -0.4, up > 0.4
+Params: {'solver': 'lbfgs', 'class_weight': 'balanced', 'C': 1.0}
+Accuracy: 0.5821
+Weighted F1-Score: 0.5733
+
+Model 3:
+Thresholds: down < -0.1, up > 0.1
+Params: {'solver': 'newton-cg', 'class_weight': 'balanced', 'C': 10.0}
+Accuracy: 0.5753
+Weighted F1-Score: 0.6048
+
+Model 4:
+Thresholds: down < -0.5, up > 0.5
+Params: {'solver': 'newton-cg', 'class_weight': 'balanced', 'C': 1.0}
+Accuracy: 0.5398
+Weighted F1-Score: 0.5258
+
+Model 5:
+Thresholds: down < -0.1, up > 0.1
+Params: {'solver': 'newton-cg', 'class_weight': None, 'C': 0.1}
+Accuracy: 0.6701
+Weighted F1-Score: 0.6562
+
+Model 6:
+Thresholds: down < -0.4, up > 0.4
+Params: {'solver': 'lbfgs', 'class_weight': 'balanced', 'C': 0.1}
+Accuracy: 0.5838
+Weighted F1-Score: 0.5746
+
+Model 7:
+Thresholds: down < -0.2, up > 0.2
+Params: {'solver': 'saga', 'class_weight': 'balanced', 'C': 100.0}
+Accuracy: 0.5922
+Weighted F1-Score: 0.6095
+
+Model 8:
+Thresholds: down < -0.2, up > 0.2
+Params: {'solver': 'lbfgs', 'class_weight': None, 'C': 100.0}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 9:
+Thresholds: down < -0.2, up > 0.2
+Params: {'solver': 'lbfgs', 'class_weight': None, 'C': 1.0}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 10:
+Thresholds: down < -0.3, up > 0.3
+Params: {'solver': 'lbfgs', 'class_weight': None, 'C': 0.01}
+Accuracy: 0.6430
+Weighted F1-Score: 0.6043
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6701
+Weighted F1-Score: 0.6562
+Thresholds: (-0.1, 0.1)
+Params: {'solver': 'newton-cg', 'class_weight': None, 'C': 0.1}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.66      0.71      0.68       282
+        flat       0.00      0.00      0.00        24
+          up       0.68      0.69      0.68       285
+
+    accuracy                           0.67       591
+   macro avg       0.45      0.47      0.46       591
+weighted avg       0.64      0.67      0.66       591
+

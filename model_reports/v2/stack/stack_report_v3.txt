@@ -1,0 +1,26 @@
+Soft Voting Ensemble Report
+===========================
+
+Base Models:
+ - Random Forest (Model 19 params, balanced)
+ - XGBoost (Model 45 params, balanced weights wrapper)
+ - MLP (Model 11 params, 4 deep layers)
+ - SVM (Model 14 params, linear, probability=True)
+
+Combination Strategy: Soft Voting (Averaged Probabilities)
+Thresholds: down < -0.2, up > 0.2
+
+Accuracy: 0.6785
+Weighted F1-Score: 0.6522
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.67      0.75      0.71       271
+        flat       0.00      0.00      0.00        44
+          up       0.69      0.72      0.70       276
+
+    accuracy                           0.68       591
+   macro avg       0.45      0.49      0.47       591
+weighted avg       0.63      0.68      0.65       591
+

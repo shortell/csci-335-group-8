@@ -1,0 +1,292 @@
+Multi-Layer Perceptron (MLP) Models Report (Tuning)
+===================================================
+
+Model 1:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.001}
+Accuracy: 0.6531
+Weighted F1-Score: 0.6284
+
+Model 2:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.01}
+Accuracy: 0.6464
+Weighted F1-Score: 0.6212
+
+Model 3:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6599
+Weighted F1-Score: 0.6343
+
+Model 4:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6464
+Weighted F1-Score: 0.6207
+
+Model 5:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6328
+Weighted F1-Score: 0.6080
+
+Model 6:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6497
+Weighted F1-Score: 0.6257
+
+Model 7:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6582
+Weighted F1-Score: 0.6328
+
+Model 8:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6294
+Weighted F1-Score: 0.6048
+
+Model 9:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6277
+Weighted F1-Score: 0.6017
+
+Model 10:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6311
+Weighted F1-Score: 0.6045
+
+Model 11:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.001}
+Accuracy: 0.6734
+Weighted F1-Score: 0.6472
+
+Model 12:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.001, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.01}
+Accuracy: 0.6633
+Weighted F1-Score: 0.6369
+
+Model 13:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.001}
+Accuracy: 0.6548
+Weighted F1-Score: 0.6301
+
+Model 14:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.01}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 15:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6359
+
+Model 16:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6447
+Weighted F1-Score: 0.6183
+
+Model 17:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6633
+Weighted F1-Score: 0.6369
+
+Model 18:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6379
+Weighted F1-Score: 0.6123
+
+Model 19:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6481
+Weighted F1-Score: 0.6230
+
+Model 20:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6396
+Weighted F1-Score: 0.6148
+
+Model 21:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6497
+Weighted F1-Score: 0.6240
+
+Model 22:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6413
+Weighted F1-Score: 0.6135
+
+Model 23:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.001}
+Accuracy: 0.6701
+Weighted F1-Score: 0.6440
+
+Model 24:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'relu', 'alpha': 0.01, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.01}
+Accuracy: 0.6413
+Weighted F1-Score: 0.6138
+
+Model 25:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.001}
+Accuracy: 0.6548
+Weighted F1-Score: 0.6291
+
+Model 26:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.01}
+Accuracy: 0.6074
+Weighted F1-Score: 0.5876
+
+Model 27:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6616
+Weighted F1-Score: 0.6363
+
+Model 28:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6464
+Weighted F1-Score: 0.6193
+
+Model 29:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6379
+Weighted F1-Score: 0.6159
+
+Model 30:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6447
+Weighted F1-Score: 0.6215
+
+Model 31:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6497
+Weighted F1-Score: 0.6241
+
+Model 32:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6244
+Weighted F1-Score: 0.6014
+
+Model 34:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6311
+Weighted F1-Score: 0.6041
+
+Model 35:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.001, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.001}
+Accuracy: 0.6142
+Weighted F1-Score: 0.5968
+
+Model 37:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.001}
+Accuracy: 0.6599
+Weighted F1-Score: 0.6341
+
+Model 38:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8), 'learning_rate_init': 0.01}
+Accuracy: 0.6091
+Weighted F1-Score: 0.5893
+
+Model 39:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6819
+Weighted F1-Score: 0.6557
+
+Model 40:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6345
+Weighted F1-Score: 0.6097
+
+Model 41:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.001}
+Accuracy: 0.6464
+Weighted F1-Score: 0.6239
+
+Model 42:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 5), 'learning_rate_init': 0.01}
+Accuracy: 0.6041
+Weighted F1-Score: 0.5831
+
+Model 43:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.001}
+Accuracy: 0.6447
+Weighted F1-Score: 0.6190
+
+Model 44:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6277
+Weighted F1-Score: 0.6066
+
+Model 46:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 8, 6, 4), 'learning_rate_init': 0.01}
+Accuracy: 0.6210
+Weighted F1-Score: 0.5954
+
+Model 47:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.001}
+Accuracy: 0.6294
+Weighted F1-Score: 0.6117
+
+Model 48:
+Thresholds: down < -0.2, up > 0.2
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (11, 11, 11, 11), 'learning_rate_init': 0.01}
+Accuracy: 0.6108
+Weighted F1-Score: 0.5938
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6819
+Weighted F1-Score: 0.6557
+Thresholds: (-0.2, 0.2)
+Params: {'activation': 'tanh', 'alpha': 0.01, 'hidden_layer_sizes': (8, 5), 'learning_rate_init': 0.001}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.67      0.78      0.72       271
+        flat       0.00      0.00      0.00        44
+          up       0.70      0.70      0.70       276
+
+    accuracy                           0.68       591
+   macro avg       0.46      0.49      0.47       591
+weighted avg       0.63      0.68      0.66       591
+

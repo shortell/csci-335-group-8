@@ -1,0 +1,177 @@
+XGBoost Models Report
+=================================
+
+Target Variable: close_t1_z
+----------------------------------------
+Accuracy: 0.5245
+Weighted F1-Score: 0.5108
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.57      0.61      0.59       239
+        flat       0.21      0.13      0.16       106
+          up       0.57      0.61      0.59       246
+
+    accuracy                           0.52       591
+   macro avg       0.45      0.45      0.45       591
+weighted avg       0.50      0.52      0.51       591
+
+
+Target Variable: volume_t1_z
+----------------------------------------
+Accuracy: 0.3976
+Weighted F1-Score: 0.3977
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.44      0.42      0.43       233
+        flat       0.37      0.36      0.36       177
+          up       0.37      0.40      0.39       181
+
+    accuracy                           0.40       591
+   macro avg       0.39      0.39      0.39       591
+weighted avg       0.40      0.40      0.40       591
+
+
+Target Variable: close_t2_z
+----------------------------------------
+Accuracy: 0.4958
+Weighted F1-Score: 0.4906
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.55      0.57      0.56       247
+        flat       0.19      0.16      0.17        95
+          up       0.54      0.55      0.55       249
+
+    accuracy                           0.50       591
+   macro avg       0.43      0.43      0.43       591
+weighted avg       0.49      0.50      0.49       591
+
+
+Target Variable: volume_t2_z
+----------------------------------------
+Accuracy: 0.4078
+Weighted F1-Score: 0.4055
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.45      0.50      0.47       230
+        flat       0.35      0.35      0.35       167
+          up       0.40      0.35      0.37       194
+
+    accuracy                           0.41       591
+   macro avg       0.40      0.40      0.40       591
+weighted avg       0.41      0.41      0.41       591
+
+
+Target Variable: close_t3_z
+----------------------------------------
+Accuracy: 0.5127
+Weighted F1-Score: 0.4958
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.55      0.59      0.57       250
+        flat       0.08      0.05      0.06        87
+          up       0.55      0.59      0.57       254
+
+    accuracy                           0.51       591
+   macro avg       0.39      0.41      0.40       591
+weighted avg       0.48      0.51      0.50       591
+
+
+Target Variable: volume_t3_z
+----------------------------------------
+Accuracy: 0.3638
+Weighted F1-Score: 0.3637
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.42      0.40      0.41       236
+        flat       0.28      0.28      0.28       160
+          up       0.37      0.39      0.38       195
+
+    accuracy                           0.36       591
+   macro avg       0.36      0.36      0.36       591
+weighted avg       0.36      0.36      0.36       591
+
+
+Target Variable: close_t4_z
+----------------------------------------
+Accuracy: 0.4721
+Weighted F1-Score: 0.4611
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.50      0.52      0.51       254
+        flat       0.16      0.10      0.12        82
+          up       0.50      0.54      0.52       255
+
+    accuracy                           0.47       591
+   macro avg       0.39      0.39      0.38       591
+weighted avg       0.45      0.47      0.46       591
+
+
+Target Variable: volume_t4_z
+----------------------------------------
+Accuracy: 0.3655
+Weighted F1-Score: 0.3662
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.40      0.37      0.39       235
+        flat       0.32      0.36      0.34       166
+          up       0.37      0.36      0.36       190
+
+    accuracy                           0.37       591
+   macro avg       0.36      0.36      0.36       591
+weighted avg       0.37      0.37      0.37       591
+
+
+Target Variable: close_t5_z
+----------------------------------------
+Accuracy: 0.4788
+Weighted F1-Score: 0.4698
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.50      0.57      0.53       260
+        flat       0.23      0.14      0.18        77
+          up       0.50      0.49      0.50       254
+
+    accuracy                           0.48       591
+   macro avg       0.41      0.40      0.40       591
+weighted avg       0.47      0.48      0.47       591
+
+
+Target Variable: volume_t5_z
+----------------------------------------
+Accuracy: 0.3790
+Weighted F1-Score: 0.3765
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.44      0.46      0.45       235
+        flat       0.28      0.25      0.26       163
+          up       0.38      0.40      0.39       193
+
+    accuracy                           0.38       591
+   macro avg       0.37      0.37      0.37       591
+weighted avg       0.37      0.38      0.38       591
+
+
+=================================
+BEST PERFORMING MODEL
+=================================
+The model for target 'close_t1_z' performed the best with a Weighted F1-Score of 0.5108.

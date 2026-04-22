@@ -1,0 +1,82 @@
+SVM Models Report (Tuning)
+==========================
+
+Model 1:
+Thresholds: down < -0.25, up > 0.25
+Params: {'kernel': 'poly', 'gamma': 0.1, 'class_weight': None, 'C': 100}
+Accuracy: 0.6244
+Weighted F1-Score: 0.5982
+
+Model 2:
+Thresholds: down < -0.3, up > 0.3
+Params: {'kernel': 'poly', 'gamma': 'auto', 'class_weight': None, 'C': 100}
+Accuracy: 0.6142
+Weighted F1-Score: 0.5798
+
+Model 3:
+Thresholds: down < -0.5, up > 0.5
+Params: {'kernel': 'linear', 'gamma': 'scale', 'class_weight': None, 'C': 100}
+Accuracy: 0.5736
+Weighted F1-Score: 0.5172
+
+Model 4:
+Thresholds: down < -0.4, up > 0.4
+Params: {'kernel': 'linear', 'gamma': 0.01, 'class_weight': 'balanced', 'C': 100}
+Accuracy: 0.6074
+Weighted F1-Score: 0.5831
+
+Model 5:
+Thresholds: down < -0.25, up > 0.25
+Params: {'kernel': 'rbf', 'gamma': 0.01, 'class_weight': None, 'C': 1}
+Accuracy: 0.6531
+Weighted F1-Score: 0.6218
+
+Model 6:
+Thresholds: down < -0.4, up > 0.4
+Params: {'kernel': 'linear', 'gamma': 0.1, 'class_weight': None, 'C': 100}
+Accuracy: 0.6159
+Weighted F1-Score: 0.5677
+
+Model 7:
+Thresholds: down < -0.1, up > 0.1
+Params: {'kernel': 'rbf', 'gamma': 0.01, 'class_weight': 'balanced', 'C': 10}
+Accuracy: 0.5431
+Weighted F1-Score: 0.5846
+
+Model 8:
+Thresholds: down < -0.4, up > 0.4
+Params: {'kernel': 'rbf', 'gamma': 0.1, 'class_weight': 'balanced', 'C': 1}
+Accuracy: 0.5262
+Weighted F1-Score: 0.5292
+
+Model 9:
+Thresholds: down < -0.3, up > 0.3
+Params: {'kernel': 'rbf', 'gamma': 'scale', 'class_weight': None, 'C': 0.1}
+Accuracy: 0.6345
+Weighted F1-Score: 0.5963
+
+Model 10:
+Thresholds: down < -0.5, up > 0.5
+Params: {'kernel': 'linear', 'gamma': 0.01, 'class_weight': None, 'C': 0.1}
+Accuracy: 0.5753
+Weighted F1-Score: 0.5187
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6531
+Weighted F1-Score: 0.6218
+Thresholds: (-0.25, 0.25)
+Params: {'kernel': 'rbf', 'gamma': 0.01, 'class_weight': None, 'C': 1}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.65      0.71      0.68       266
+        flat       0.00      0.00      0.00        54
+          up       0.66      0.73      0.69       271
+
+    accuracy                           0.65       591
+   macro avg       0.44      0.48      0.46       591
+weighted avg       0.59      0.65      0.62       591
+

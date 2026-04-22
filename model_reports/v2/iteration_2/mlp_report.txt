@@ -1,0 +1,82 @@
+Multi-Layer Perceptron (MLP) Models Report (Tuning)
+===================================================
+
+Model 1:
+Thresholds: down < -0.5, up > 0.5
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (100,), 'alpha': 0.0001, 'activation': 'tanh'}
+Accuracy: 0.4992
+Weighted F1-Score: 0.4889
+
+Model 2:
+Thresholds: down < -0.3, up > 0.3
+Params: {'learning_rate_init': 0.001, 'hidden_layer_sizes': (50,), 'alpha': 0.01, 'activation': 'tanh'}
+Accuracy: 0.5905
+Weighted F1-Score: 0.5659
+
+Model 3:
+Thresholds: down < -0.3, up > 0.3
+Params: {'learning_rate_init': 0.001, 'hidden_layer_sizes': (100,), 'alpha': 0.0001, 'activation': 'tanh'}
+Accuracy: 0.5330
+Weighted F1-Score: 0.5227
+
+Model 4:
+Thresholds: down < -0.3, up > 0.3
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (100,), 'alpha': 0.01, 'activation': 'tanh'}
+Accuracy: 0.5212
+Weighted F1-Score: 0.5142
+
+Model 5:
+Thresholds: down < -0.4, up > 0.4
+Params: {'learning_rate_init': 0.001, 'hidden_layer_sizes': (50,), 'alpha': 0.0001, 'activation': 'tanh'}
+Accuracy: 0.5415
+Weighted F1-Score: 0.5179
+
+Model 6:
+Thresholds: down < -0.25, up > 0.25
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (50, 50), 'alpha': 0.001, 'activation': 'tanh'}
+Accuracy: 0.5178
+Weighted F1-Score: 0.5169
+
+Model 7:
+Thresholds: down < -0.25, up > 0.25
+Params: {'learning_rate_init': 0.001, 'hidden_layer_sizes': (50, 50), 'alpha': 0.001, 'activation': 'relu'}
+Accuracy: 0.5228
+Weighted F1-Score: 0.5187
+
+Model 8:
+Thresholds: down < -0.1, up > 0.1
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (100,), 'alpha': 0.01, 'activation': 'relu'}
+Accuracy: 0.6024
+Weighted F1-Score: 0.6027
+
+Model 9:
+Thresholds: down < -0.5, up > 0.5
+Params: {'learning_rate_init': 0.001, 'hidden_layer_sizes': (50, 50), 'alpha': 0.0001, 'activation': 'relu'}
+Accuracy: 0.5008
+Weighted F1-Score: 0.4880
+
+Model 10:
+Thresholds: down < -0.25, up > 0.25
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (50,), 'alpha': 0.0001, 'activation': 'tanh'}
+Accuracy: 0.5415
+Weighted F1-Score: 0.5357
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6024
+Weighted F1-Score: 0.6027
+Thresholds: (-0.1, 0.1)
+Params: {'learning_rate_init': 0.01, 'hidden_layer_sizes': (100,), 'alpha': 0.01, 'activation': 'relu'}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.62      0.61      0.61       282
+        flat       0.08      0.08      0.08        24
+          up       0.63      0.64      0.64       285
+
+    accuracy                           0.60       591
+   macro avg       0.44      0.44      0.44       591
+weighted avg       0.60      0.60      0.60       591
+

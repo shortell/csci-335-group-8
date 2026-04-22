@@ -1,0 +1,92 @@
+XGBoost Models Report (Tuning)
+==============================
+
+Model 1:
+Thresholds: down < -0.2, up > 0.2
+Params: {'subsample': 1.0, 'n_estimators': 200, 'max_depth': 3, 'learning_rate': 0.1, 'colsample_bytree': 1.0}
+Use balanced weights: False
+Accuracy: 0.6497
+Weighted F1-Score: 0.6250
+
+Model 2:
+Thresholds: down < -0.2, up > 0.2
+Params: {'subsample': 0.8, 'n_estimators': 200, 'max_depth': 5, 'learning_rate': 0.01, 'colsample_bytree': 0.8}
+Use balanced weights: True
+Accuracy: 0.6159
+Weighted F1-Score: 0.6226
+
+Model 3:
+Thresholds: down < -0.5, up > 0.5
+Params: {'subsample': 0.8, 'n_estimators': 200, 'max_depth': 3, 'learning_rate': 0.01, 'colsample_bytree': 0.8}
+Use balanced weights: False
+Accuracy: 0.5668
+Weighted F1-Score: 0.5110
+
+Model 4:
+Thresholds: down < -0.3, up > 0.3
+Params: {'subsample': 1.0, 'n_estimators': 200, 'max_depth': 5, 'learning_rate': 0.1, 'colsample_bytree': 1.0}
+Use balanced weights: False
+Accuracy: 0.6125
+Weighted F1-Score: 0.5804
+
+Model 5:
+Thresholds: down < -0.25, up > 0.25
+Params: {'subsample': 0.8, 'n_estimators': 100, 'max_depth': 5, 'learning_rate': 0.01, 'colsample_bytree': 1.0}
+Use balanced weights: False
+Accuracy: 0.6345
+Weighted F1-Score: 0.6039
+
+Model 6:
+Thresholds: down < -0.3, up > 0.3
+Params: {'subsample': 1.0, 'n_estimators': 50, 'max_depth': 7, 'learning_rate': 0.01, 'colsample_bytree': 1.0}
+Use balanced weights: True
+Accuracy: 0.4975
+Weighted F1-Score: 0.5121
+
+Model 7:
+Thresholds: down < -0.5, up > 0.5
+Params: {'subsample': 0.8, 'n_estimators': 50, 'max_depth': 7, 'learning_rate': 0.1, 'colsample_bytree': 0.8}
+Use balanced weights: False
+Accuracy: 0.5702
+Weighted F1-Score: 0.5235
+
+Model 8:
+Thresholds: down < -0.2, up > 0.2
+Params: {'subsample': 1.0, 'n_estimators': 100, 'max_depth': 5, 'learning_rate': 0.2, 'colsample_bytree': 0.8}
+Use balanced weights: False
+Accuracy: 0.6396
+Weighted F1-Score: 0.6162
+
+Model 9:
+Thresholds: down < -0.5, up > 0.5
+Params: {'subsample': 1.0, 'n_estimators': 200, 'max_depth': 3, 'learning_rate': 0.2, 'colsample_bytree': 1.0}
+Use balanced weights: False
+Accuracy: 0.5448
+Weighted F1-Score: 0.5106
+
+Model 10:
+Thresholds: down < -0.2, up > 0.2
+Params: {'subsample': 1.0, 'n_estimators': 200, 'max_depth': 5, 'learning_rate': 0.01, 'colsample_bytree': 0.8}
+Use balanced weights: False
+Accuracy: 0.6447
+Weighted F1-Score: 0.6196
+
+=================================
+BEST PERFORMING MODEL
+=================================
+Accuracy: 0.6497
+Weighted F1-Score: 0.6250
+Thresholds: (-0.2, 0.2)
+Params: {'subsample': 1.0, 'n_estimators': 200, 'max_depth': 3, 'learning_rate': 0.1, 'colsample_bytree': 1.0, 'class_weight': None}
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        down       0.65      0.73      0.69       271
+        flat       0.00      0.00      0.00        44
+          up       0.65      0.68      0.67       276
+
+    accuracy                           0.65       591
+   macro avg       0.43      0.47      0.45       591
+weighted avg       0.60      0.65      0.62       591
+
