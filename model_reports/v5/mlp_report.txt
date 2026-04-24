@@ -1,60 +1,58 @@
 MLP Report
 =======================================================
+
 Target: max_z_next5  |  Threshold > 1.5
 Total: 2438  |  Buy: 905 (37.1%)  |  No-Buy: 1533 (62.9%)
 Train: 1560  |  Val: 390  |  Test: 488
-Features (14): mentions_tesla, is_reply, is_quote, is_retweet, positive, negative, neutral, close_delta_z, volume_delta_z, price_cv, volume_cv, close_position, up_bar_volume_ratio, bullish_bar_ratio
-
-[ Best Balanced Accuracy ]
-Params: {'alpha': 0.0001, 'hidden_layer_sizes': (32,), 'learning_rate_init': 0.001}
+Params: {'activation': 'relu', 'hidden_layer_sizes': (11, 5, 2), 'learning_rate_init': 0.001}
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7697   0.6773   0.6934
-F1 (buy)             0.7096   0.5870   0.6187
-Precision (buy)      0.7256   0.6183   0.5979
+Balanced Acc         0.7185   0.6881   0.6807
+F1 (buy)             0.6405   0.5970   0.6022
+Precision (buy)      0.6789   0.6504   0.5864
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.60      0.64      0.62       181
-    dont_buy       0.78      0.75      0.76       307
+         buy       0.59      0.62      0.60       181
+    dont_buy       0.77      0.74      0.75       307
 
-    accuracy                           0.71       488
-   macro avg       0.69      0.69      0.69       488
-weighted avg       0.71      0.71      0.71       488
+    accuracy                           0.70       488
+   macro avg       0.68      0.68      0.68       488
+weighted avg       0.70      0.70      0.70       488
 
 [ Best F1 (buy) ]
-Params: {'alpha': 0.0001, 'hidden_layer_sizes': (32,), 'learning_rate_init': 0.001}
+Params: {'activation': 'relu', 'hidden_layer_sizes': (11, 5, 2), 'learning_rate_init': 0.001}
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7697   0.6773   0.6934
-F1 (buy)             0.7096   0.5870   0.6187
-Precision (buy)      0.7256   0.6183   0.5979
+Balanced Acc         0.7185   0.6881   0.6807
+F1 (buy)             0.6405   0.5970   0.6022
+Precision (buy)      0.6789   0.6504   0.5864
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.60      0.64      0.62       181
-    dont_buy       0.78      0.75      0.76       307
+         buy       0.59      0.62      0.60       181
+    dont_buy       0.77      0.74      0.75       307
 
-    accuracy                           0.71       488
-   macro avg       0.69      0.69      0.69       488
-weighted avg       0.71      0.71      0.71       488
+    accuracy                           0.70       488
+   macro avg       0.68      0.68      0.68       488
+weighted avg       0.70      0.70      0.70       488
 
 [ Best Composite (Bal+F1+Prec) ]
-Params: {'alpha': 0.0001, 'hidden_layer_sizes': (32,), 'learning_rate_init': 0.001}  (prob threshold: 0.45)
+Params: {'activation': 'relu', 'hidden_layer_sizes': (11, 5, 2), 'learning_rate_init': 0.001}  (prob threshold: 0.50)
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7805   0.6942   0.6878
-F1 (buy)             0.7244   0.6200   0.6200
-Precision (buy)      0.7054   0.6000   0.5662
+Balanced Acc         0.7185   0.6881   0.6807
+F1 (buy)             0.6405   0.5970   0.6022
+Precision (buy)      0.6789   0.6504   0.5864
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.57      0.69      0.62       181
-    dont_buy       0.79      0.69      0.74       307
+         buy       0.59      0.62      0.60       181
+    dont_buy       0.77      0.74      0.75       307
 
-    accuracy                           0.69       488
-   macro avg       0.68      0.69      0.68       488
-weighted avg       0.71      0.69      0.69       488
+    accuracy                           0.70       488
+   macro avg       0.68      0.68      0.68       488
+weighted avg       0.70      0.70      0.70       488

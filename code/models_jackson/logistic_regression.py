@@ -15,8 +15,8 @@ FEATURES = [
     'positive', 'negative', 'neutral',
     'close_delta_z', 'volume_delta_z',
     'price_cv', 'volume_cv', 
-    'close_position',
-    'up_bar_volume_ratio', 'bullish_bar_ratio'
+    # 'close_position',
+    # 'up_bar_volume_ratio', 'bullish_bar_ratio'
 ]
 
 df = pd.read_csv(INPUT)

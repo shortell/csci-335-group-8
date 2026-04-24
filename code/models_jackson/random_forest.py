@@ -14,8 +14,9 @@ FEATURES = [
     'mentions_tesla', 'is_reply', 'is_quote', 'is_retweet',
     'positive', 'negative', 'neutral',
     'close_delta_z', 'volume_delta_z',
-    'price_cv', 'volume_cv', 'close_position',
-    'up_bar_volume_ratio', 'bullish_bar_ratio'
+    'price_cv', 'volume_cv', 
+    # 'close_position',
+    # 'up_bar_volume_ratio', 'bullish_bar_ratio'
 ]
 
 df = pd.read_csv(INPUT)

@@ -14,14 +14,14 @@ FEATURES = [
     'mentions_tesla', 'is_reply', 'is_quote', 'is_retweet',
     'positive', 'negative', 'neutral',
     'close_delta_z', 'volume_delta_z',
-    'price_cv', 'volume_cv', 'close_position',
-    'up_bar_volume_ratio', 'bullish_bar_ratio'
+    'price_cv', 'volume_cv',
 ]
 
 df = pd.read_csv(INPUT)
 X = SimpleImputer(strategy='median').fit_transform(
     df[FEATURES].apply(pd.to_numeric, errors='coerce')
 ).astype(np.float64)
+
 y_raw = df[TARGET].apply(lambda z: 'buy' if not pd.isna(z) and z > THRESH else ('dont_buy' if not pd.isna(z) else np.nan))
 mask = y_raw.notna().values
 X, y = X[mask], np.array(y_raw[y_raw.notna()])
@@ -29,7 +29,6 @@ X, y = X[mask], np.array(y_raw[y_raw.notna()])
 X_tv, X_test, y_tv, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 X_train, X_val, y_train, y_val = train_test_split(X_tv, y_tv, test_size=0.2, random_state=42, stratify=y_tv)
 
-# StandardScaler works better than MinMaxScaler for neural networks
 scaler = StandardScaler()
 Xtr = scaler.fit_transform(X_train).astype(np.float64)
 Xva = scaler.transform(X_val).astype(np.float64)
@@ -41,7 +40,6 @@ def predict_thresh(clf, Xs, t=0.5):
     return np.where(proba[:, buy_idx] >= t, 'buy', 'dont_buy')
 
 def tune_threshold(clf, Xva, y_val):
-    """Find threshold maximising Fbeta(0.5) — weights precision 2x recall."""
     best_t, best_s = 0.5, 0.0
     for t in np.arange(0.30, 0.85, 0.05):
         s = fbeta_score(y_val, predict_thresh(clf, Xva, t), beta=0.5, pos_label='buy', zero_division=0)
@@ -57,9 +55,10 @@ def get_metrics(clf, Xs, ys, t=0.5):
         'prec':    precision_score(ys, yp, pos_label='buy', zero_division=0),
     }
 
+# UPDATED PARAMETER GRID
 param_grid = {
-    'hidden_layer_sizes': [(32,), (32, 16), (64, 32), (64, 32, 16)],
-    'alpha': [0.0001, 0.001, 0.01],
+    'hidden_layer_sizes': [(11,), (11, 5), (11, 5, 2)],
+    'activation': ['relu', 'tanh'],
     'learning_rate_init': [0.001, 0.01],
 }
 
@@ -67,11 +66,10 @@ results = []
 for params in ParameterGrid(param_grid):
     try:
         clf = MLPClassifier(
-            activation='relu',
             solver='adam',
             max_iter=500,
             random_state=42,
-            **params
+            **params # Dynamically passes activation and other params
         )
         clf.fit(Xtr, y_train)
         m = get_metrics(clf, Xva, y_val)
