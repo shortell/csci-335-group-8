@@ -9,7 +9,7 @@ import numpy as np
 # output is a numpy array including textblob analysis & vader analysis
 def sentimentalize(df):
     vader = SentimentIntensityAnalyzer()
-    twts = df['full_text'].fillna('').tolist()
+    twts = df['whole_text'].fillna('').tolist()
 
     tb_score = [(tb(t).sentiment.polarity, tb(t).sentiment.subjectivity)
                  for t in twts]

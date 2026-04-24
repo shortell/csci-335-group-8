@@ -2,6 +2,8 @@
 Code mainly copied from jackson's old code.
 Made so it's all here instead and not just repeated with every train .py file
 Edits: Includes my sentiment thing in load_embeddings_with_vectors or smth
+
+Removed engagement bc.. idk where it went
 """
 
 from sklearn.preprocessing import StandardScaler
@@ -11,6 +13,7 @@ import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
 import pandas as pd
+import os
 from pathlib import Path
 
 import sentimenter as sm
@@ -20,9 +23,10 @@ PCA_COMPONENTS = 400
 ACTIVE_MODEL = ('open_ai', 'text-embedding-3-small')
 
 BASE_DIR       = Path(__file__).parent.parent.parent
-EMBEDDING_PATH = BASE_DIR / 'data' / 'vector_embeddings' / ACTIVE_MODEL[0] / f'{ACTIVE_MODEL[1]}.npz'
-PIPELINE_PATH  = "data\final\musk_events_k10_replies_True.csv"
-PLOT_OUT       = BASE_DIR / 'analysis' / 'neural_net_results.png'
+EMBEDDING_PATH = BASE_DIR / 'data' / 'vector_embeddings' / 'open_ai' / 'dimension_reduced' / 'text-embedding-3-small_pca_95.npz'
+PIPELINE_PATH  = BASE_DIR / 'data' / 'final' / 'musk_events_k10_replies_True.csv'
+
+PLOT_OUT       = Path("analysis/netresults.png")
 
 BASELINE_COL   = 'stock_t0_close'
 LOOKAHEAD_COL  = 'stock_t2_close' # can change to t1, t4, t8, t16 for different lookahead windows
@@ -34,21 +38,27 @@ def load_embeddings_with_features():
     Creates the feature space with tweet embeddings + engagement features.
     Feature scaling the engagement features.
     """
+
+    df = pd.read_csv(PIPELINE_PATH)
+    print([c for c in df.columns if 'stock' in c.lower()])
+
+    
     data       = np.load(EMBEDDING_PATH, allow_pickle=False)
-    X_emb      = data['embeddings']
+    X_emb      = data['embeddings_pca']
     row_ids    = data['row_ids']
     print(f"Embeddings loaded: {X_emb.shape}")
 
     df         = pd.read_csv(PIPELINE_PATH)
+    df = df.iloc[row_ids]
     # log1p compresses skewed engagement counts (viral tweets can have 500k likes 
     # vs most having <100) so outliers don't dominate the feature space or PCA
-    engagement = np.log1p(df[['likeCount', 'retweetCount', 'replyCount']].fillna(0).to_numpy())
+    # engagement = np.log1p(df[['likeCount', 'retweetCount', 'replyCount']].fillna(0).to_numpy())
 
     # guessed sentiments, using textblob for polarity and vader for pos/neu/neg sentiments + better social media support
     sentiments = sm.sentimentalize(df)
 
-    X = np.hstack([X_emb, engagement, sentiments]) # stacking engagement features with embeddings for model input
-    print(f"Feature matrix with engagement: {X.shape}")
+    X = np.hstack([X_emb, sentiments]) # stacking engagement features with embeddings for model input
+    print(f"Feature matrix with sentiments: {X.shape}")
     return X, row_ids
 
 
@@ -90,8 +100,8 @@ def apply_pca(X_train, X_test, n_components):
         return X_train, X_test, None
 
     # PCA on embeddings only — keeps engagement features from dominating components
-    emb_train, eng_train = X_train[:, :-3], X_train[:, -3:]
-    emb_test,  eng_test  = X_test[:, :-3],  X_test[:, -3:]
+    emb_train, eng_train = X_train[:, :-9], X_train[:, -9:]
+    emb_test,  eng_test  = X_test[:, :-9],  X_test[:, -9:]
 
     pca         = PCA(n_components=n_components, random_state=42)
     emb_train_r = pca.fit_transform(emb_train)
