@@ -3,58 +3,66 @@ Logistic Regression Report
 Target: max_z_next5  |  Threshold > 1.5
 Total: 2438  |  Buy: 905 (37.1%)  |  No-Buy: 1533 (62.9%)
 Train: 1560  |  Val: 390  |  Test: 488
-Features (14): mentions_tesla, is_reply, is_quote, is_retweet, positive, negative, neutral, close_delta_z, volume_delta_z, price_cv, volume_cv, close_position, up_bar_volume_ratio, bullish_bar_ratio
+Features (11): mentions_tesla, is_reply, is_quote, is_retweet, positive, negative, neutral, close_delta_z, volume_delta_z, price_cv, volume_cv
 
 [ Best Balanced Accuracy ]
 Params: {'C': 0.01, 'class_weight': 'balanced', 'solver': 'lbfgs'}
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7138   0.7288   0.7208
-F1 (buy)             0.6513   0.6667   0.6636
-Precision (buy)      0.5864   0.6127   0.5720
+Balanced Acc         0.6985   0.7192   0.6989
+F1 (buy)             0.6352   0.6562   0.6424
+Precision (buy)      0.5681   0.6000   0.5465
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.57      0.79      0.66       181
-    dont_buy       0.84      0.65      0.73       307
+         buy       0.55      0.78      0.64       181
+    dont_buy       0.83      0.62      0.71       307
 
-    accuracy                           0.70       488
-   macro avg       0.71      0.72      0.70       488
-weighted avg       0.74      0.70      0.71       488
+    accuracy                           0.68       488
+   macro avg       0.69      0.70      0.68       488
+weighted avg       0.72      0.68      0.68       488
 
 [ Best F1 (buy) ]
 Params: {'C': 0.01, 'class_weight': 'balanced', 'solver': 'lbfgs'}
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7138   0.7288   0.7208
-F1 (buy)             0.6513   0.6667   0.6636
-Precision (buy)      0.5864   0.6127   0.5720
+Balanced Acc         0.6985   0.7192   0.6989
+F1 (buy)             0.6352   0.6562   0.6424
+Precision (buy)      0.5681   0.6000   0.5465
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.57      0.79      0.66       181
-    dont_buy       0.84      0.65      0.73       307
+         buy       0.55      0.78      0.64       181
+    dont_buy       0.83      0.62      0.71       307
 
-    accuracy                           0.70       488
-   macro avg       0.71      0.72      0.70       488
-weighted avg       0.74      0.70      0.71       488
-
+    accuracy                           0.68       488
+   macro avg       0.69      0.70      0.68       488
+weighted avg       0.72      0.68      0.68       488
+Params: {'C': 1.0, 'class_weight': None, 'solver': 'lbfgs'}  (prob threshold: 0.50)
 [ Best Composite (Bal+F1+Prec) ]
-Params: {'C': 0.01, 'class_weight': 'balanced', 'solver': 'lbfgs'}  (prob threshold: 0.50)
+Features (11): mentions_tesla, is_reply, is_quote, is_retweet, positive, negative, neutral, close_delta_z, volume_delta_z, price_cv, volume_cv
+
+
+Target: max_z_next5  |  Threshold > 1.5
+Total: 2438  |  Buy: 905 (37.1%)  |  No-Buy: 1533 (62.9%)
+Train: 1560  |  Val: 390  |  Test: 488
+
 Metric                Train      Val     Test
 ---------------------------------------------
-Balanced Acc         0.7138   0.7288   0.7208
-F1 (buy)             0.6513   0.6667   0.6636
-Precision (buy)      0.5864   0.6127   0.5720
+Balanced Acc         0.6913   0.7004   0.6900
+F1 (buy)             0.6060   0.6107   0.6125
+Precision (buy)      0.6340   0.6838   0.6011
 
 Classification Report (Test):
               precision    recall  f1-score   support
 
-         buy       0.57      0.79      0.66       181
-    dont_buy       0.84      0.65      0.73       307
+         buy       0.60      0.62      0.61       181
+    dont_buy       0.77      0.76      0.76       307
 
-    accuracy                           0.70       488
-   macro avg       0.71      0.72      0.70       488
-weighted avg       0.74      0.70      0.71       488
+    accuracy                           0.71       488
+   macro avg       0.69      0.69      0.69       488
+weighted avg       0.71      0.71      0.71       488
+
+
